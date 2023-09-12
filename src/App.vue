@@ -5,6 +5,9 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * @params
+ */
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 

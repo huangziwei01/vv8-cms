@@ -23,7 +23,7 @@ export default new MYRequest({
     responseFailFns: (err) => {
       ElNotification({
         title: 'Title',
-        message: err.msg
+        message: err.msg || '服务器开小差了~'
       })
       return err
     }
