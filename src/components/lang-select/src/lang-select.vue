@@ -25,7 +25,7 @@
 import { useI18n } from 'vue-i18n'
 import { defineProps, computed } from 'vue'
 // import { useStore } from 'vuex'
-import { useSystemStore } from '@/store/system/system.ts'
+import { useSystemStore } from '@/store/system/system'
 import { ElMessage } from 'element-plus'
 
 const systemStore = useSystemStore()
