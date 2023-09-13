@@ -41,7 +41,8 @@ import {
   ElDescriptions,
   ElDescriptionsItem,
   ElTag,
-  ElNotification
+  ElNotification,
+  ElConfigProvider
 } from 'element-plus'
 
 const components = [
@@ -83,7 +84,8 @@ const components = [
   ElDescriptions,
   ElDescriptionsItem,
   ElTag,
-  ElNotification
+  ElNotification,
+  ElConfigProvider
 ]
 
 export default function (app: App) {

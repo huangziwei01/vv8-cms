@@ -25,8 +25,8 @@ import localStorage from '@/utils/cache'
 import { useUserStore } from '@/store/user/user'
 
 const accountForm = reactive({
-  name: localStorage.getCache('name') ?? '',
-  password: localStorage.getCache('password') ?? ''
+  name: localStorage.getCache('name') ?? 'coderwhy',
+  password: localStorage.getCache('password') ?? '123456'
 })
 const accountFormRef = ref<FormInstance>()
 const rules = reactive<FormRules>(accountRule)

@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import { pageListDataRequest, selectDataRequest } from '@/api/system/system'
 
 export const useSystemStore = defineStore('system', () => {
+  const language = ref<string>('zh')
   const queryInfo = ref<any>({})
   const usersPageListData = ref<any>([])
   const rolePageListData = ref<any>([])
@@ -60,7 +61,12 @@ export const useSystemStore = defineStore('system', () => {
     // queryInfo.value = formData.value
   }
 
+  function changeLanguage(lang: string) {
+    language.value = lang
+  }
+
   return {
+    language,
     queryInfo,
     usersPageListData,
     rolePageListData,
@@ -73,6 +79,7 @@ export const useSystemStore = defineStore('system', () => {
     menuSelectData,
     getPageDataList,
     getSelectData,
-    changeQueryInfo
+    changeQueryInfo,
+    changeLanguage
   }
 })

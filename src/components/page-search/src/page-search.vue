@@ -3,7 +3,7 @@
     <my-form v-model="formData" v-bind="searchFormConfig">
       <template #header>
         <div class="title">
-          <h2>高级检索</h2>
+          <h2></h2>
         </div>
       </template>
       <template #footer>

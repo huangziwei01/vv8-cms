@@ -26,7 +26,7 @@ export const technologyStacks = [
 
   {
     title: '状态管理',
-    desp: 'Vuex 4.x'
+    desp: 'Pinia 4.x'
   },
 
   {

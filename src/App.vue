@@ -8,10 +8,17 @@
 /**
  * @params
  */
-import { ElConfigProvider } from 'element-plus'
+import { computed } from 'vue'
+// import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import en from 'element-plus/dist/locale/en.mjs'
+import { useSystemStore } from '@/store/system/system'
 
-const locale = zhCn
+const systemStore = useSystemStore()
+const locale = computed(() => {
+  systemStore.language === 'zh' ? zhCn : en
+  console.log(locale)
+})
 </script>
 
 <style lang="less"></style>

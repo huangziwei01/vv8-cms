@@ -10,6 +10,8 @@ import pinia from './store'
 import { useUserStore } from '@/store/user/user'
 import { useSystemStore } from './store/system/system'
 
+import i18n from '@/i18n'
+
 const app = createApp(App)
 
 RegisterApp(app)
@@ -18,5 +20,6 @@ app.use(pinia)
 useUserStore().setupUserStore()
 // useSystemStore().setupSystemStore()
 app.use(router)
+app.use(i18n)
 
 app.mount('#app')
