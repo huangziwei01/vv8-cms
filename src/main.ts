@@ -15,11 +15,12 @@ import i18n from '@/i18n'
 const app = createApp(App)
 
 RegisterApp(app)
+app.use(i18n)
+
 app.use(pinia)
 //要先生成路由才能进行app.use(router)
 useUserStore().setupUserStore()
 // useSystemStore().setupSystemStore()
 app.use(router)
-app.use(i18n)
 
 app.mount('#app')
