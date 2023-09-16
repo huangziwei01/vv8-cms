@@ -2,17 +2,17 @@
   <div class="dashboard">
     <el-row :gutter="10">
       <el-col :span="7">
-        <my-card title="分类商品数量(饼图)">
+        <my-card :title="productCategoryPie">
           <pie-echart :pieData="categoryGoodsCount"></pie-echart>
         </my-card>
       </el-col>
       <el-col :span="10">
-        <my-card title="散点图">
+        <my-card :title="$t('scatter')">
           <scatter-chart />
         </my-card>
       </el-col>
       <el-col :span="7">
-        <my-card title="分类商品数量(玫瑰图)">
+        <my-card :title="$t('productCategoryRose')">
           <rose-echart :roseData="categoryGoodsCount"></rose-echart>
         </my-card>
       </el-col>
@@ -20,12 +20,12 @@
 
     <el-row :gutter="10" class="row">
       <el-col :span="12">
-        <my-card title="分类商品的销量">
+        <my-card :title="$t('sale')">
           <line-echart v-bind="categoryGoodsSale"></line-echart>
         </my-card>
       </el-col>
       <el-col :span="12">
-        <my-card title="分类商品的收藏">
+        <my-card :title="$t('collection')">
           <bar-echart v-bind="categoryGoodsSale"></bar-echart>
         </my-card>
       </el-col>
@@ -49,6 +49,10 @@ import barEchart from '@/components/page-charts/src/bar-echart.vue'
 import scatterChart from '@/components/page-charts/src/scatter-chart.vue'
 
 import { useAnalysisStore } from '@/store/analysis/analysis'
+import { useI18n } from 'vue-i18n'
+const i18n = useI18n()
+const productCategoryPie = i18n.t('productCategoryPie')
+
 const analysisStore = useAnalysisStore()
 analysisStore.getCategoryGoodsCount()
 analysisStore.getCategoryGoodsSale()

@@ -9,13 +9,21 @@
         <h3>{{ contentTableConfig.title }}</h3>
       </template>
 
-      <template #headerHandler>
+      <!-- <template #headerHandler>
         <el-button type="success" v-if="isCreate" plain @click="newBtnClick">{{
           contentTableConfig.newBtnTitle
             ? contentTableConfig.newBtnTitle
             : '新建'
         }}</el-button>
         <el-button type="primary" icon="RefreshLeft">刷新</el-button>
+      </template> -->
+      <template #headerHandler>
+        <el-button type="success" v-if="isCreate" plain @click="newBtnClick">{{
+          $t('createButton')
+        }}</el-button>
+        <el-button type="primary" icon="RefreshLeft">{{
+          $t('refresh')
+        }}</el-button>
       </template>
       <template #create="scoped">
         <span>{{ filters.formatUtcTime(scoped.row.createAt) }}</span>
@@ -32,7 +40,7 @@
               icon="Edit"
               v-if="isUpdate"
               @click="editBtnClick(scoped.row)"
-              >编辑</el-button
+              >{{ $t('editButton') }}</el-button
             >
             <el-button
               type="danger"
@@ -40,7 +48,7 @@
               icon="Delete"
               v-if="isDelete"
               @click="handleDeleteClick(scoped.row)"
-              >删除</el-button
+              >{{ $t('deleteButton') }}</el-button
             >
           </div>
         </span>

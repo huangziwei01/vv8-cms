@@ -14,7 +14,7 @@
     >
       <template #status="scoped">
         <el-button :type="scoped.row.enable ? 'success' : 'danger'">{{
-          scoped.row.enable ? '启用' : '禁用'
+          scoped.row.enable ? $t('enabled') : $t('unenabled')
         }}</el-button>
       </template>
     </page-content>

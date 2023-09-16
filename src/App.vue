@@ -17,7 +17,6 @@ import { useSystemStore } from '@/store/system/system'
 const systemStore = useSystemStore()
 const locale = computed(() => {
   const test = systemStore.language === 'zh' ? zhCn : en
-  console.log(locale)
   return test
 })
 </script>

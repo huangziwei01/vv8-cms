@@ -8,10 +8,12 @@
       </template>
       <template #footer>
         <div class="buttons">
-          <el-button icon="RefreshRight" @click="resetBtnClick">重置</el-button>
-          <el-button type="primary" icon="Search" @click="SearchBtnlick"
-            >搜索</el-button
-          >
+          <el-button icon="RefreshRight" @click="resetBtnClick">{{
+            $t('reset')
+          }}</el-button>
+          <el-button type="primary" icon="Search" @click="SearchBtnlick">{{
+            $t('search')
+          }}</el-button>
         </div>
       </template>
     </my-form>

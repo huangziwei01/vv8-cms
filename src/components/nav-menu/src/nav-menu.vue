@@ -2,7 +2,7 @@
   <div class="nav-menu">
     <div class="logo">
       <img class="img" src="~@/assets/img/logo.svg" alt="logo" />
-      <span v-show="!isCollapse" class="title">后台管理系统</span>
+      <span v-show="!isCollapse" class="title">{{ $t('navMenuTitle') }}</span>
     </div>
     <el-menu
       :default-active="currentItemId"
@@ -18,7 +18,7 @@
           <el-sub-menu :index="item.id + ''">
             <template #title>
               <el-icon><location /></el-icon>
-              <span>{{ item.name }}</span>
+              <span>{{ $t(item.name) }}</span>
             </template>
             <template v-for="subitem in item.children" :key="subitem.id">
               <el-menu-item
@@ -26,7 +26,7 @@
                 @click="handleItemClick(subitem)"
               >
                 <i v-if="subitem.icon" :class="subitem.icon"></i>
-                <span>{{ subitem.name }}</span>
+                <span>{{ $t(subitem.name) }}</span>
               </el-menu-item>
             </template>
           </el-sub-menu>
@@ -47,6 +47,9 @@ import { ref, computed } from 'vue'
 import { useUserStore } from '@/store/user/user'
 import { useRoute, useRouter } from 'vue-router'
 import { pathMapToMenu } from '@/utils/pathMapToMenu'
+import { useSystemStore } from '@/store/system/system'
+
+const systemStore = useSystemStore()
 
 const props = defineProps({
   isFold: Boolean

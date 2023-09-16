@@ -6,7 +6,7 @@
   >
     <span class="el-dropdown-link">
       <el-icon><Switch /></el-icon>
-      国际化
+      {{ $t('internationalization') }}
     </span>
     <template #dropdown>
       <el-dropdown-menu>

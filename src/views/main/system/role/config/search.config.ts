@@ -5,25 +5,25 @@ export const searchFormConfig: IForm = {
     {
       field: 'name',
       type: 'input',
-      label: '角色名称',
-      placeHolder: '请输入角色名称',
+      label: 'role',
+      placeHolder: 'rolePlaceHolder',
       rules: []
     },
     {
       field: 'intro',
       type: 'input',
-      label: '权限介绍',
-      placeHolder: '请输入权限介绍',
+      label: 'intro',
+      placeHolder: 'introPlaceHolder',
       rules: []
     },
     {
       field: 'createAt',
       type: 'datepicker',
-      label: '创建时间',
+      label: 'createAt',
       rules: [],
       otherOption: {
-        startPlaceholder: '开始时间',
-        endPlaceholder: '结束时间',
+        // startPlaceholder: '开始时间',
+        // endPlaceholder: '结束时间',
         type: 'daterange'
       }
     }

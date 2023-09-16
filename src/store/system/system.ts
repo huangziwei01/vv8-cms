@@ -2,9 +2,14 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 import { pageListDataRequest, selectDataRequest } from '@/api/system/system'
+import localStorage from '@/utils/cache'
 
 export const useSystemStore = defineStore('system', () => {
-  const language = ref<string>('zh')
+  const language = ref<any>(
+    localStorage.getCache('lang') !== undefined
+      ? localStorage.getCache('lang')
+      : 'zh'
+  )
   const queryInfo = ref<any>({})
   const usersPageListData = ref<any>([])
   const rolePageListData = ref<any>([])
@@ -63,6 +68,7 @@ export const useSystemStore = defineStore('system', () => {
 
   function changeLanguage(lang: string) {
     language.value = lang
+    localStorage.setCache('lang', lang)
   }
 
   return {

@@ -8,7 +8,7 @@
         <template v-for="(item, index) in formItems" :key="index">
           <el-col v-bind="colLayout">
             <el-form-item
-              :label="item.label"
+              :label="$t(item.label)"
               :rules="item.rules"
               class="form-item"
               :style="itemStyle"
@@ -18,7 +18,7 @@
                 v-if="item.type === 'input' || item.type === 'password'"
               >
                 <el-input
-                  :placeholder="item.placeHolder"
+                  :placeholder="$t(item.placeHolder)"
                   :show-password="item.type === 'password'"
                   v-bind="item.otherOption"
                   :modelValue="modelValue[`${item.field}`]"
@@ -27,7 +27,7 @@
               </template>
               <template v-else-if="item.type === 'select'">
                 <el-select
-                  :placeholder="item.placeHolder"
+                  :placeholder="$t(item.placeHolder)"
                   style="width: 100%"
                   v-bind="item.otherOption"
                   :modelValue="modelValue[`${item.field}`]"
@@ -64,6 +64,9 @@
 <script setup lang="ts">
 import { ref, watch, PropType, computed } from 'vue'
 import { IFormItem } from '../types'
+
+import { useI18n } from 'vue-i18n'
+const i18n = useI18n()
 // interface props {
 //   modelValue: any
 //   labelWidth: string

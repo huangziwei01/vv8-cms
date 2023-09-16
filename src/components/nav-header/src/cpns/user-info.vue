@@ -10,11 +10,13 @@
       </span>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item icon="User">用户信息</el-dropdown-item>
-          <el-dropdown-item icon="Setting">系统管理</el-dropdown-item>
-          <el-dropdown-item icon="Close" divided @click="handleExitClick"
-            >退出登录</el-dropdown-item
-          >
+          <el-dropdown-item icon="User">{{ $t('userInfo') }}</el-dropdown-item>
+          <el-dropdown-item icon="Setting">{{
+            $t('系统管理')
+          }}</el-dropdown-item>
+          <el-dropdown-item icon="Close" divided @click="handleExitClick">{{
+            $t('logout')
+          }}</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>

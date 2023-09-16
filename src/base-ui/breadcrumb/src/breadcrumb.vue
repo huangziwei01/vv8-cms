@@ -4,7 +4,7 @@
       <template v-for="item in breadCrumbs" :key="item.path">
         <el-breadcrumb-item
           :to="item.path == undefined ? route.path : { path: item.path }"
-          >{{ item.name }}</el-breadcrumb-item
+          >{{ $t(item.name) }}</el-breadcrumb-item
         >
       </template>
     </el-breadcrumb>

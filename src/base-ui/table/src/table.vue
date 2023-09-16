@@ -17,7 +17,7 @@
       <el-table-column
         v-if="showIndexColumn"
         type="index"
-        label="序号"
+        :label="$t('index')"
         align="center"
         width="80"
       ></el-table-column>
@@ -28,7 +28,12 @@
         width="80"
       ></el-table-column>
       <template v-for="propItem in propList" :key="propItem.prop">
-        <el-table-column v-bind="propItem" align="center" show-overflow-tooltip>
+        <el-table-column
+          v-bind="propItem"
+          align="center"
+          :label="$t(propItem.label)"
+          show-overflow-tooltip
+        >
           <template #default="scoped">
             <slot :name="propItem.slotName" :row="scoped.row">
               {{ scoped.row[propItem.prop] }}

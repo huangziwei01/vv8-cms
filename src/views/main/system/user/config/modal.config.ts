@@ -1,46 +1,46 @@
 import { IForm } from '@/base-ui/form'
 
 export const modalConfig: IForm = {
-  title: '新建用户',
+  // title: '新建用户',
   formItems: [
     {
       field: 'name',
       type: 'input',
-      label: '用户名',
-      placeHolder: '请输入用户名'
+      label: 'username',
+      placeHolder: 'usernamePlaceHolder'
     },
     {
       field: 'realname',
       type: 'input',
-      label: '真实姓名',
-      placeHolder: '请输入真实姓名',
+      label: 'realname',
+      placeHolder: 'realnamePlaceHolder',
       rules: [{ required: true }]
     },
     {
       field: 'password',
       type: 'password',
-      label: '密码',
-      placeHolder: '请输入密码',
+      label: 'password',
+      placeHolder: 'passwordPlaceHolder',
       isHidden: false
     },
     {
       field: 'cellphone',
       type: 'input',
-      label: '电话号码',
-      placeHolder: '请输入电话号码'
+      label: 'cellphone',
+      placeHolder: 'cellphonePlaceHolder'
     },
     {
       field: 'roleId',
       type: 'select',
-      label: '选择角色',
-      placeHolder: '请选择角色',
+      label: 'role',
+      placeHolder: 'rolePlaceHolder',
       options: []
     },
     {
       field: 'departmentId',
       type: 'select',
-      label: '选择部门',
-      placeHolder: '请选择部门',
+      label: 'department',
+      placeHolder: 'departmentPlaceHolder',
       options: []
     }
   ],

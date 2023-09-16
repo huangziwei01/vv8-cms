@@ -17,9 +17,9 @@ const props = defineProps<{
 
 const options = computed(() => {
   return {
-    title: {
-      text: '支持鼠标滚动缩放'
-    },
+    // title: {
+    //   text: '支持鼠标滚动缩放'
+    // },
     grid: {
       bottom: '5%'
     },

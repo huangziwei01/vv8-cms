@@ -1,47 +1,51 @@
 import { IForm } from '@/base-ui/form'
+// import { useI18n } from 'vue-i18n'
+// const i18n = useI18n()
+
+// const i18nUserName = i18n.t('username')
 
 export const searchFormConfig: IForm = {
   formItems: [
     {
       field: 'name',
       type: 'input',
-      label: '用户名',
-      placeHolder: '请输入用户名',
+      label: 'username',
+      placeHolder: 'usernamePlaceHolder',
       rules: []
     },
     {
       field: 'realname',
       type: 'input',
-      label: '真实姓名',
-      placeHolder: '请输入真实姓名',
+      label: 'realname',
+      placeHolder: 'realnamePlaceHolder',
       rules: []
     },
     {
       field: 'cellphone',
       type: 'input',
-      label: '手机号码',
-      placeHolder: '请输入手机号码',
+      label: 'cellphone',
+      placeHolder: 'cellphonePlaceHolder',
       rules: []
     },
     {
       field: 'enable',
       type: 'select',
-      label: '状态',
-      placeHolder: '请选择状态',
+      label: 'enable',
+      placeHolder: 'enablePlaceHolder',
       rules: [],
       options: [
-        { label: '启用', value: 1 },
-        { label: '禁用', value: 0 }
+        { label: 'enabled', value: 1 },
+        { label: 'unenabled', value: 0 }
       ]
     },
     {
       field: 'createAt',
       type: 'datepicker',
-      label: '创建时间',
+      label: 'createAt',
       rules: [],
       otherOption: {
-        startPlaceholder: '开始时间',
-        endPlaceholder: '结束时间',
+        // startPlaceholder: 'createAt',
+        // endPlaceholder: 'endAt',
         type: 'daterange'
       }
     }
