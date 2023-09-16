@@ -2,7 +2,7 @@
   <div class="dashboard">
     <el-row :gutter="10">
       <el-col :span="7">
-        <my-card :title="productCategoryPie">
+        <my-card :title="$t('productCategoryRose')">
           <pie-echart :pieData="categoryGoodsCount"></pie-echart>
         </my-card>
       </el-col>
@@ -49,9 +49,9 @@ import barEchart from '@/components/page-charts/src/bar-echart.vue'
 import scatterChart from '@/components/page-charts/src/scatter-chart.vue'
 
 import { useAnalysisStore } from '@/store/analysis/analysis'
-import { useI18n } from 'vue-i18n'
-const i18n = useI18n()
-const productCategoryPie = i18n.t('productCategoryPie')
+// import { useI18n } from 'vue-i18n'
+// const i18n = useI18n()
+// const productCategoryPie = i18n.t('productCategoryPie')
 
 const analysisStore = useAnalysisStore()
 analysisStore.getCategoryGoodsCount()
