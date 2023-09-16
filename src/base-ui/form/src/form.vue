@@ -18,7 +18,7 @@
                 v-if="item.type === 'input' || item.type === 'password'"
               >
                 <el-input
-                  :placeholder="$t(item.placeHolder)"
+                  :placeholder="$t(item.placeHolder as string)"
                   :show-password="item.type === 'password'"
                   v-bind="item.otherOption"
                   :modelValue="modelValue[`${item.field}`]"
@@ -27,7 +27,7 @@
               </template>
               <template v-else-if="item.type === 'select'">
                 <el-select
-                  :placeholder="$t(item.placeHolder)"
+                  :placeholder="$t(item.placeHolder as string)"
                   style="width: 100%"
                   v-bind="item.otherOption"
                   :modelValue="modelValue[`${item.field}`]"
