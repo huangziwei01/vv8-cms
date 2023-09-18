@@ -5,11 +5,7 @@ import { pageListDataRequest, selectDataRequest } from '@/api/system/system'
 import localStorage from '@/utils/cache'
 
 export const useSystemStore = defineStore('system', () => {
-  const language = ref<any>(
-    localStorage.getCache('lang') !== undefined
-      ? localStorage.getCache('lang')
-      : 'zh'
-  )
+  const language = ref<any>('zh')
   const tagsViewList = ref<any>([])
   const queryInfo = ref<any>({})
   const usersPageListData = ref<any>([])

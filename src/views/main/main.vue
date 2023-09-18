@@ -72,7 +72,10 @@ watch(route, (to, from) => {
     path,
     query,
     title: getTitle(to)
-  })
+  }),
+    {
+      immediate: true
+    }
 })
 
 let isCollapse = ref(false)
