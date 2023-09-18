@@ -10,6 +10,7 @@ export const useSystemStore = defineStore('system', () => {
       ? localStorage.getCache('lang')
       : 'zh'
   )
+  const tagsViewList = ref<any>([])
   const queryInfo = ref<any>({})
   const usersPageListData = ref<any>([])
   const rolePageListData = ref<any>([])
@@ -71,8 +72,20 @@ export const useSystemStore = defineStore('system', () => {
     localStorage.setCache('lang', lang)
   }
 
+  function addTagViews(tag: any) {
+    const isFind = tagsViewList.value.find((item: any) => {
+      return item.path === tag.path
+    })
+    // 处理重复
+    if (!isFind) {
+      tagsViewList.value.push(tag)
+      localStorage.setCache('tageViewList', tagsViewList)
+    }
+  }
+
   return {
     language,
+    tagsViewList,
     queryInfo,
     usersPageListData,
     rolePageListData,
@@ -86,6 +99,7 @@ export const useSystemStore = defineStore('system', () => {
     getPageDataList,
     getSelectData,
     changeQueryInfo,
-    changeLanguage
+    changeLanguage,
+    addTagViews
   }
 })

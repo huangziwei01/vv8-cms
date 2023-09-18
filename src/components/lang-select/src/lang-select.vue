@@ -27,6 +27,7 @@ import { defineProps, computed } from 'vue'
 // import { useStore } from 'vuex'
 import { useSystemStore } from '@/store/system/system'
 import { ElMessage } from 'element-plus'
+import { generateTitle } from '@/utils/generateTitle'
 
 const systemStore = useSystemStore()
 
@@ -49,7 +50,13 @@ const i18n = useI18n()
 const handleSetLanguage = (lang: string) => {
   i18n.locale.value = lang
   systemStore.changeLanguage(lang)
-  ElMessage.success('切换成功')
+  // systemStore.tagsViewList.forEach((tag: any) => {
+  //   tag = {
+  //     ...tag,
+  //     title: generateTitle(tag.title)
+  //   }
+  // })
+  ElMessage.success('语言切换成功')
 }
 </script>
 

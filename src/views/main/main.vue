@@ -8,6 +8,7 @@
         <el-header class="page-header">
           <nav-header @fold-change="collapseChange"></nav-header>
         </el-header>
+        <tags-view></tags-view>
         <el-main class="page-content">
           <div class="content">
             <router-view v-slot="{ Component }">
@@ -25,7 +26,54 @@
 <script setup lang="ts">
 import NavMenu from '@/components/nav-menu'
 import NavHeader from '@/components/nav-header'
-import { ref } from 'vue'
+import TagsView from '@/components/tags-view'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { useSystemStore } from '@/store/system/system'
+// import { generateTitle } from '@/utils/generateTitle'
+
+const route = useRoute()
+const systemStore = useSystemStore()
+
+/**
+ * 生成 title
+ */
+const getTitle = (route: any) => {
+  let title = ''
+  if (!route.meta) {
+    // 处理无 meta 的路由
+    const pathArr = route.path.split('/')
+    title = pathArr[pathArr.length - 1]
+  } else {
+    title = route.meta.title
+  }
+  return title
+}
+
+const whiteList = ['/login', '/import', '/404', '/401']
+
+/**
+ * path 是否需要被缓存
+ * @param {*} path
+ * @returns
+ */
+const isTags = (path: any) => {
+  return !whiteList.includes(path)
+}
+
+watch(route, (to, from) => {
+  if (!isTags(to.path)) return
+  const { fullPath, meta, name, params, path, query } = to
+  systemStore.addTagViews({
+    fullPath,
+    meta,
+    name,
+    params,
+    path,
+    query,
+    title: getTitle(to)
+  })
+})
 
 let isCollapse = ref(false)
 const collapseChange = (isFold: boolean) => {
